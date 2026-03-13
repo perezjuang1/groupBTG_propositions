@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrbitMiner Connect – Proposal 3</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="logo-chip">OMC</div>
+      <div class="logo-copy">
+        <span class="logo-main">OrbitMiner Connect</span>
+        <span class="logo-sub">Global Polymetallic Trading Cloud</span>
+      </div>
+    </div>
+    <nav class="topbar-nav">
+      <a href="#home">Home</a>
+      <a href="#platform">Platform</a>
+      <a href="#technology">Technology</a>
+      <a href="#traceability">Traceability</a>
+      <a href="#marketplace">Marketplace</a>
+      <a href="#analytics">Analytics</a>
+      <a href="#about">About</a>
+      <button class="demo-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        Request demo
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="stripe stripe-hero">
+      <div class="hero-shell">
+        <aside class="hero-dash">
+          <header>
+            <h1>Digital command center for polymetallic trading.</h1>
+            <p>
+              OrbitMiner Connect transforms fragmented mineral supply chains into a transparent,
+              analytics-first trading environment for miners, refineries, traders, labs and logistics
+              operators.
+            </p>
+          </header>
+          <div class="hero-metrics">
+            <div class="metric">
+              <span class="metric-label">Traceable volume</span>
+              <span class="metric-value">93%</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Lots under management</span>
+              <span class="metric-value">5,420</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Annual transaction value</span>
+              <span class="metric-value">$3.1B</span>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <button class="btn-main">See live dashboards</button>
+            <button class="btn-ghost" onclick="document.getElementById('platform').scrollIntoView({behavior:'smooth'})">
+              Explore platform
+            </button>
+          </div>
+        </aside>
+        <aside class="hero-boards">
+          <div class="board big">
+            <div class="board-header">
+              <span>Global flows</span>
+              <span class="pill pill-green">ESG view</span>
+            </div>
+            <div class="board-body">
+              <div class="flow-diagram">
+                <div class="flow-node">Mines</div>
+                <div class="flow-pipe"></div>
+                <div class="flow-node">Labs</div>
+                <div class="flow-pipe"></div>
+                <div class="flow-node">Marketplace</div>
+                <div class="flow-pipe"></div>
+                <div class="flow-node">Logistics</div>
+                <div class="flow-pipe"></div>
+                <div class="flow-node">Smelters</div>
+              </div>
+              <div class="flow-kpis">
+                <div>
+                  <span class="kpi-label">Regions</span>
+                  <span class="kpi-value">Americas • EMEA • APAC</span>
+                </div>
+                <div>
+                  <span class="kpi-label">Actors</span>
+                  <span class="kpi-value">Miners • Traders • Labs • Logistics</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="board small">
+            <div class="board-header">
+              <span>Market snapshot</span>
+              <span class="pill pill-amber">Live</span>
+            </div>
+            <div class="snap-bars">
+              <div class="snap-col">
+                <span class="snap-label">Cu</span>
+                <div class="snap-bar" style="height: 78%"></div>
+              </div>
+              <div class="snap-col">
+                <span class="snap-label">Zn</span>
+                <div class="snap-bar" style="height: 58%"></div>
+              </div>
+              <div class="snap-col">
+                <span class="snap-label">Pb</span>
+                <div class="snap-bar" style="height: 40%"></div>
+              </div>
+              <div class="snap-col">
+                <span class="snap-label">Ag</span>
+                <div class="snap-bar" style="height: 92%"></div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PLATFORM -->
+    <section id="platform" class="stripe">
+      <header class="stripe-head">
+        <h2>One platform for the full polymetallic lifecycle.</h2>
+        <p>
+          From supplier onboarding to final settlement, OrbitMiner Connect unifies the processes,
+          documents and data of the mineral supply chain.
+        </p>
+      </header>
+      <div class="platform-matrix">
+        <article>
+          <h3>Supplier management</h3>
+          <p>
+            Consolidate miner and cooperative profiles, onboarding, KYC and ESG documentation in a
+            single record of truth.
+          </p>
+        </article>
+        <article>
+          <h3>Mineral purchasing</h3>
+          <p>
+            Move beyond spreadsheets with structured RFQs, approval flows and digital contracts
+            tailored to polymetallic transactions.
+          </p>
+        </article>
+        <article>
+          <h3>Laboratory analysis</h3>
+          <p>
+            Integrate certified labs, LIMS and assay providers to automatically attach COAs to each
+            lot.
+          </p>
+        </article>
+        <article>
+          <h3>Inventory management</h3>
+          <p>
+            Track lots, blends and splits across mines, warehouses and ports with quality-weighted
+            inventories.
+          </p>
+        </article>
+        <article>
+          <h3>Logistics</h3>
+          <p>
+            Synchronize transport orders, export documents and handovers between logistics operators
+            and traders.
+          </p>
+        </article>
+        <article>
+          <h3>Sales & contracts</h3>
+          <p>
+            Standardize polymetallic contract structures, pricing formulas and deduction models across
+            counterparties.
+          </p>
+        </article>
+        <article class="wide">
+          <h3>Financial operations & valuation</h3>
+          <p>
+            Automate valuation, invoicing and settlement with transparent breakdowns for metal content,
+            market prices, purity, logistics and metallurgical costs.
+          </p>
+          <div class="valuation-row">
+            <div>
+              <span class="kpi-label">Automated valuation engine</span>
+              <span class="kpi-value">Metal content × Price curves × Deductions</span>
+            </div>
+            <div>
+              <span class="kpi-label">Compliance</span>
+              <span class="kpi-value">AML, sanctions, ESG scoring across all actors</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="flow-line">
+        <span>Suppliers</span>
+        <span class="arrow"></span>
+        <span>Assays</span>
+        <span class="arrow"></span>
+        <span>Marketplace</span>
+        <span class="arrow"></span>
+        <span>Logistics</span>
+        <span class="arrow"></span>
+        <span>Buyers</span>
+        <span class="arrow"></span>
+        <span>Finance</span>
+      </div>
+    </section>
+
+    <!-- TECHNOLOGY -->
+    <section id="technology" class="stripe stripe-alt">
+      <header class="stripe-head">
+        <h2>Cloud-native architecture with analytics at the core.</h2>
+        <p>
+          An event-driven microservices stack, fronted by an API gateway and fed by international
+          metal price benchmarks, powers both the marketplace and analytics layers.
+        </p>
+      </header>
+      <div class="tech-grid">
+        <article class="tech-card">
+          <h3>Architecture diagram</h3>
+          <div class="arch-stack">
+            <div class="arch-row">
+              <span class="arch-label">Interfaces</span>
+              <div class="arch-chips">
+                <span>Web</span>
+                <span>Mobile</span>
+                <span>Partner portals</span>
+              </div>
+            </div>
+            <div class="arch-row">
+              <span class="arch-label">API gateway</span>
+              <div class="arch-core">Routing • Auth • Rate limiting • Observability</div>
+            </div>
+            <div class="arch-row">
+              <span class="arch-label">Microservices</span>
+              <div class="arch-chips">
+                <span>Marketplace</span>
+                <span>Pricing</span>
+                <span>Traceability</span>
+                <span>Inventory</span>
+                <span>Logistics</span>
+                <span>Compliance</span>
+              </div>
+            </div>
+            <div class="arch-row">
+              <span class="arch-label">Data & analytics</span>
+              <div class="arch-core">Streaming bus • Data lake • BI</div>
+            </div>
+            <div class="arch-row">
+              <span class="arch-label">External feeds</span>
+              <div class="arch-chips">
+                <span>Metal prices</span>
+                <span>LIMS</span>
+                <span>ERPs</span>
+                <span>Banks</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="tech-card">
+          <h3>Technology choices</h3>
+          <p>
+            We use modern cloud infrastructure, container orchestration and observability tooling to
+            ensure resilience and performance at global scale.
+          </p>
+          <ul>
+            <li>Microservices for marketplace, pricing, traceability, logistics and compliance.</li>
+            <li>API-first design enabling easy integration with smelters, labs and ERPs.</li>
+            <li>Streaming data backbone for near real-time dashboards and alerts.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- TRACEABILITY -->
+    <section id="traceability" class="stripe">
+      <header class="stripe-head">
+        <h2>Traceability from mine to market.</h2>
+        <p>
+          Every lot carries a digital passport capturing origin, assays, movements, contracts and ESG
+          checks, enabling verifiable, responsible sourcing.
+        </p>
+      </header>
+      <div class="trace-layout">
+        <article class="trace-track">
+          <h3>Traceability workflow</h3>
+          <ol>
+            <li>Lot creation at mine with GPS, ownership and mine-level ESG data.</li>
+            <li>Sampling and lab work orders linked to the lot.</li>
+            <li>Assay results, certificates and variances recorded.</li>
+            <li>Movements across sites tracked with timestamps and actors.</li>
+            <li>Contracts, deliveries and invoices bound to lot IDs.</li>
+            <li>Compliance rules applied across the full history.</li>
+          </ol>
+        </article>
+        <article class="trace-kpis">
+          <h3>Compliance & ESG view</h3>
+          <ul>
+            <li>AML screening for counterparties and jurisdictions.</li>
+            <li>Sanctioned entity checks and conflict mineral screening.</li>
+            <li>ESG scoring based on origin, emissions and certifications.</li>
+          </ul>
+          <p>
+            Buyers and auditors can access compiled evidence packs showing the entire journey of each
+            lot.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- MARKETPLACE -->
+    <section id="marketplace" class="stripe stripe-alt">
+      <header class="stripe-head">
+        <h2>Digital marketplace for polymetallic lots.</h2>
+        <p>
+          A high-trust marketplace where miners list traceable lots and global buyers acquire supply
+          aligned to their metallurgical strategies.
+        </p>
+      </header>
+      <div class="market-layout">
+        <article class="market-copy">
+          <h3>For miners</h3>
+          <p>
+            Reach more buyers, reduce negotiation friction and improve price realization with
+            transparent quality and logistics data.
+          </p>
+          <h3>For buyers</h3>
+          <p>
+            Screen lots by chemistry, origin, ESG profile and logistics to match plant requirements and
+            risk policies.
+          </p>
+          <h3>For ecosystem partners</h3>
+          <p>
+            Laboratories, logistics operators and financiers plug into a structured, real-time trading
+            environment.
+          </p>
+        </article>
+        <article class="market-board">
+          <header class="board-header">
+            <span>Live lot board</span>
+            <span class="pill pill-blue">Automated valuation</span>
+          </header>
+          <table>
+            <thead>
+              <tr>
+                <th>Lot</th>
+                <th>Miner</th>
+                <th>Cu / Zn / Pb</th>
+                <th>Ag (g/t)</th>
+                <th>Valuation (USD)</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>OR-4821</td>
+                <td>Andean Metals</td>
+                <td>2.3 / 4.0 / 1.1</td>
+                <td>115</td>
+                <td>$4.6M</td>
+                <td><span class="pill pill-green">Live</span></td>
+              </tr>
+              <tr>
+                <td>OR-4824</td>
+                <td>Altiplano Co-op</td>
+                <td>1.9 / 3.6 / 0.9</td>
+                <td>96</td>
+                <td>$3.3M</td>
+                <td><span class="pill pill-amber">Offers</span></td>
+              </tr>
+              <tr>
+                <td>OR-4828</td>
+                <td>Pacific Ridge</td>
+                <td>2.6 / 4.4 / 1.4</td>
+                <td>132</td>
+                <td>$5.2M</td>
+                <td><span class="pill pill-muted">Closed</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </div>
+    </section>
+
+    <!-- ANALYTICS -->
+    <section id="analytics" class="stripe">
+      <header class="stripe-head">
+        <h2>Analytics cockpit for mineral trading.</h2>
+        <p>
+          Dashboards cover mineral volumes, transaction values, supplier performance and traceability
+          so leaders can control risk and optimize flows.
+        </p>
+      </header>
+      <div class="dash-grid">
+        <article class="dash-card">
+          <h3>Volumes & transaction values</h3>
+          <div class="dash-chart">
+            <div class="dash-row">
+              <span class="dash-label">Volume (t)</span>
+              <div class="dash-bars">
+                <div style="height: 40%"></div>
+                <div style="height: 55%"></div>
+                <div style="height: 75%"></div>
+                <div style="height: 95%"></div>
+              </div>
+            </div>
+            <div class="dash-row">
+              <span class="dash-label">Transaction value (USD)</span>
+              <span class="dash-value">$2.9B last 12 months</span>
+            </div>
+          </div>
+        </article>
+        <article class="dash-card">
+          <h3>Supplier performance</h3>
+          <ul class="dash-metrics">
+            <li><span>On-time deliveries</span><span>97%</span></li>
+            <li><span>Assay variance vs lab</span><span>±0.3%</span></li>
+            <li><span>Disputes per 100 lots</span><span>0.7</span></li>
+            <li><span>Repeat suppliers</span><span>74%</span></li>
+          </ul>
+        </article>
+        <article class="dash-card">
+          <h3>Traceability coverage</h3>
+          <div class="donut">
+            <div class="donut-inner">
+              <span>93%</span>
+              <small>Traceable volume</small>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="stripe stripe-alt">
+      <header class="stripe-head">
+        <h2>About OrbitMiner Connect.</h2>
+        <p>
+          We exist to digitize the mineral supply chain, connecting miners, buyers, laboratories and
+          logistics partners in a secure, transparent trading network.
+        </p>
+      </header>
+      <div class="about-grid">
+        <article>
+          <h3>Vision</h3>
+          <p>
+            A global digital network where responsible, traceable polymetallic minerals move with
+            speed, transparency and trust.
+          </p>
+        </article>
+        <article>
+          <h3>Who we serve</h3>
+          <p>
+            Mining companies and small miners, refineries and smelters, international traders,
+            certified laboratories and logistics operators.
+          </p>
+        </article>
+        <article>
+          <h3>What we enable</h3>
+          <p>
+            Automated valuation, lab-integrated quality assurance, traceability and ESG reporting across
+            the full mineral journey.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="stripe">
+      <header class="stripe-head">
+        <h2>Contact & request a demo.</h2>
+        <p>
+          Tell us about your operations and we will prepare a tailored platform walkthrough for your
+          mineral portfolio and geographies.
+        </p>
+      </header>
+      <div class="contact-shell">
+        <form class="contact-form">
+          <div class="row">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input id="name" type="text" placeholder="Your name" />
+            </div>
+            <div class="field">
+              <label for="company">Company</label>
+              <input id="company" type="text" placeholder="Company name" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="email">Work email</label>
+              <input id="email" type="email" placeholder="you@company.com" />
+            </div>
+            <div class="field">
+              <label for="segment">Segment</label>
+              <select id="segment">
+                <option>Mining company / small miner</option>
+                <option>Refinery / smelter</option>
+                <option>International trader</option>
+                <option>Laboratory</option>
+                <option>Logistics / export operator</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="message">What do you want to achieve?</label>
+            <textarea id="message" rows="4" placeholder="Describe your mineral focus, sites and regions."></textarea>
+          </div>
+          <button type="submit" class="btn-main full-width">Submit request</button>
+        </form>
+        <aside class="contact-side">
+          <h3>Deployment & regions</h3>
+          <ul>
+            <li>Multi-tenant and dedicated environments</li>
+            <li>Regional deployments in Americas, EMEA and APAC</li>
+            <li>Integration with ERPs, LIMS and trade finance partners</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> OrbitMiner Connect</span>
+    <span>Security • Compliance • ESG</span>
+  </footer>
+
+  <script>
+    const yearNode = document.getElementById('year');
+    if (yearNode) yearNode.textContent = new Date().getFullYear().toString();
+  </script>
+</body>
+</html>
