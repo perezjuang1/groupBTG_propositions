@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polymetallic Platform – Propositions</title>
+  <style>
+    :root {
+      --bg: #020617;
+      --card: #020617;
+      --card-alt: #020c1a;
+      --border: #1e293b;
+      --accent: #22c55e;
+      --accent2: #0ea5e9;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background: radial-gradient(circle at top, #020617 0, #020617 26%, #000 100%);
+      color: var(--text);
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      padding: 18px 7vw 10px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.9);
+      background: linear-gradient(to bottom, rgba(2, 6, 23, 0.98), rgba(2, 6, 23, 0.9), transparent);
+      backdrop-filter: blur(18px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header h1 {
+      margin: 0 0 4px;
+      font-size: 1.25rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    header p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    main {
+      flex: 1;
+      padding: 40px 7vw 32px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: radial-gradient(circle at top left, var(--card), var(--card-alt));
+      border-radius: var(--radius-lg);
+      padding: 18px 18px 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.9);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      font-size: 1.02rem;
+    }
+    .card p {
+      margin: 0 0 10px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    a.btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.86rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #020617;
+    }
+    a.btn.secondary {
+      margin-left: 8px;
+      background: transparent;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--text);
+    }
+    footer {
+      padding: 14px 7vw 18px;
+      border-top: 1px solid rgba(15, 23, 42, 0.9);
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: radial-gradient(circle at top, #020617, #020617 26%, #000 100%);
+    }
+    @media (max-width: 840px) {
+      header, main, footer {
+        padding-inline: 4vw;
+      }
+      footer {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Polymetallic Platform – Website Propositions</h1>
+    <p>Select one of the design proposals for the corporate website.</p>
+  </header>
+
+  <main>
+    <div class="grid">
+      <article class="card">
+        <div class="badge">Proposal 1</div>
+        <h2>Fintech-style dark metallic UI</h2>
+        <p>
+          High-tech look with orbital diagrams, dashboards and a premium dark theme focused on global
+          trading and traceability.
+        </p>
+        <div class="meta">Folder: <code>propositions1/</code></div>
+        <a class="btn" href="propositions1/index.html">Open Proposal 1</a>
+      </article>
+
+      <article class="card">
+        <div class="badge">Proposal 2</div>
+        <h2>Industrial grid & logistics focus</h2>
+        <p>
+          Card-based layout with industrial supply chain map, module grids, and marketplace visuals for
+          miners, smelters and traders.
+        </p>
+        <div class="meta">Folder: <code>propositions2/</code></div>
+        <a class="btn" href="propositions2/index.html">Open Proposal 2</a>
+      </article>
+
+      <article class="card">
+        <div class="badge">Proposal 3</div>
+        <h2>Analytics cockpit / command center</h2>
+        <p>
+          Dashboard-style interface with strong analytics visuals, traceability donuts and live lot
+          boards for decision-makers.
+        </p>
+        <div class="meta">Folder: <code>propositions3/</code></div>
+        <a class="btn" href="propositions3/index.html">Open Proposal 3</a>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <span>Static index for design exploration – no backend required.</span>
+    <span>© <span id="year"></span> Polymetallic Digital Platform</span>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear().toString();
+  </script>
+</body>
+</html>
