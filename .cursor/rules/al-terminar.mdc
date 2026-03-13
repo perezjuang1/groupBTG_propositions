@@ -1,0 +1,12 @@
+---
+description: Hacer commit automáticamente al terminar una tarea
+alwaysApply: true
+---
+
+# Al terminar una tarea
+
+Cuando termines de implementar, corregir o cambiar algo en este proyecto:
+
+1. **Resumir** brevemente qué se hizo.
+2. **Hacer commit automáticamente**: ejecutar `git add` de los archivos modificados y `git commit` con un mensaje claro que describa los cambios (en español o inglés, según el proyecto).
+3. **Hacer push**: ejecutar `git push` a la rama actual, siempre que el usuario no haya indicado lo contrario explícitamente para esa tarea.
