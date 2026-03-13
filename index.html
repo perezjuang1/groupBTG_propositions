@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Polymetallic Platform – Propositions</title>
+  <title>Propuestas web – Creador del software y empresas usuarias</title>
   <style>
     :root {
       --bg: #020617;
@@ -86,6 +86,22 @@
       font-size: 0.88rem;
       color: var(--muted);
     }
+    .section-title {
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 8px;
+    }
+    .section-desc {
+      margin: 0 0 20px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .block {
+      margin-bottom: 48px;
+    }
+    .block:last-of-type { margin-bottom: 24px; }
     .meta {
       font-size: 0.8rem;
       color: var(--muted);
@@ -135,50 +151,71 @@
 </head>
 <body>
   <header>
-    <h1>Polymetallic Platform – Website Propositions</h1>
-    <p>Select one of the design proposals for the corporate website.</p>
+    <h1>Propuestas web</h1>
+    <p>Dos públicos: la empresa que crea el software y las empresas que usan la plataforma para comercializar minerales.</p>
   </header>
 
   <main>
-    <div class="grid">
-      <article class="card">
-        <div class="badge">Proposal 1</div>
-        <h2>Fintech-style dark metallic UI</h2>
-        <p>
-          High-tech look with orbital diagrams, dashboards and a premium dark theme focused on global
-          trading and traceability.
-        </p>
-        <div class="meta">Folder: <code>propositions1/</code></div>
-        <a class="btn" href="propositions1/index.html">Open Proposal 1</a>
-      </article>
+    <section class="block">
+      <p class="section-title">Para la empresa que crea el software</p>
+      <p class="section-desc">Sitio corporativo de la empresa de tecnología que desarrolla y comercializa la plataforma digital para el comercio de minerales. Mensaje: «Construimos la plataforma», «Solicitar demo», funcionalidades y despliegues.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="badge">Creador · 1</div>
+          <h2>Estilo fintech, UI oscura y metálica</h2>
+          <p>Diagramas orbitales, dashboards, tema oscuro. Posicionamiento: construimos la plataforma; solicitar demo.</p>
+          <div class="meta"><code>creator/proposal1/</code></div>
+          <a class="btn" href="creator/proposal1/index.html">Abrir</a>
+        </article>
+        <article class="card">
+          <div class="badge">Creador · 2</div>
+          <h2>Enfoque industrial, grid y logística</h2>
+          <p>Layout en tarjetas, mapa de cadena de suministro, módulos. Posicionamiento: construimos el software; solicitar demo.</p>
+          <div class="meta"><code>creator/proposal2/</code></div>
+          <a class="btn" href="creator/proposal2/index.html">Abrir</a>
+        </article>
+        <article class="card">
+          <div class="badge">Creador · 3</div>
+          <h2>Cabina analítica / centro de mando</h2>
+          <p>Estilo dashboard, gráficos analíticos, trazabilidad. Posicionamiento: construimos la plataforma; solicitar demo.</p>
+          <div class="meta"><code>creator/proposal3/</code></div>
+          <a class="btn" href="creator/proposal3/index.html">Abrir</a>
+        </article>
+      </div>
+    </section>
 
-      <article class="card">
-        <div class="badge">Proposal 2</div>
-        <h2>Industrial grid & logistics focus</h2>
-        <p>
-          Card-based layout with industrial supply chain map, module grids, and marketplace visuals for
-          miners, smelters and traders.
-        </p>
-        <div class="meta">Folder: <code>propositions2/</code></div>
-        <a class="btn" href="propositions2/index.html">Open Proposal 2</a>
-      </article>
-
-      <article class="card">
-        <div class="badge">Proposal 3</div>
-        <h2>Analytics cockpit / command center</h2>
-        <p>
-          Dashboard-style interface with strong analytics visuals, traceability donuts and live lot
-          boards for decision-makers.
-        </p>
-        <div class="meta">Folder: <code>propositions3/</code></div>
-        <a class="btn" href="propositions3/index.html">Open Proposal 3</a>
-      </article>
-    </div>
+    <section class="block">
+      <p class="section-title">Para las empresas que usan el software</p>
+      <p class="section-desc">Sitio corporativo de la empresa que comercializa minerales (trader / operador del marketplace) y utiliza la plataforma. Mensaje: «Comercializamos minerales», «Contacto / equipo comercial», transparencia y trazabilidad.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="badge">Usuarias · 1</div>
+          <h2>Estilo fintech, UI oscura y metálica</h2>
+          <p>Misma estética que Creador 1; posicionamiento: comercializamos minerales polimetálicos; contacto / solicitar conversación.</p>
+          <div class="meta"><code>users/proposal1/</code></div>
+          <a class="btn" href="users/proposal1/index.html">Abrir</a>
+        </article>
+        <article class="card">
+          <div class="badge">Usuarias · 2</div>
+          <h2>Enfoque industrial, grid y logística</h2>
+          <p>Misma estética que Creador 2; posicionamiento: somos una empresa comercializadora de minerales; contacto con nuestro equipo comercial.</p>
+          <div class="meta"><code>users/proposal2/</code></div>
+          <a class="btn" href="users/proposal2/index.html">Abrir</a>
+        </article>
+        <article class="card">
+          <div class="badge">Usuarias · 3</div>
+          <h2>Cabina analítica / centro de mando</h2>
+          <p>Misma estética que Creador 3; posicionamiento: comercializamos minerales con visibilidad total; contacto.</p>
+          <div class="meta"><code>users/proposal3/</code></div>
+          <a class="btn" href="users/proposal3/index.html">Abrir</a>
+        </article>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <span>Static index for design exploration – no backend required.</span>
-    <span>© <span id="year"></span> Polymetallic Digital Platform</span>
+    <span>Índice estático para explorar diseños – sin backend.</span>
+    <span>© <span id="year"></span> Propuestas web – Creador del software y empresas usuarias</span>
   </footer>
 
   <script>
