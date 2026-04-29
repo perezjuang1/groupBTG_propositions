@@ -38,11 +38,10 @@
     <!-- HOME -->
     <section id="home" class="section hero">
       <div class="hero-content">
-        <h1>Comercializamos minerales polimetálicos con transparencia</h1>
+        <h1>Movemos minerales polimetálicos con transparencia y escala global</h1>
         <p>
-          Somos una empresa que comercializa minerales. La cadena de suministro suele estar fragmentada
-          y ser opaca; nosotros conectamos a mineros, compradores industriales, laboratorios y logística
-          en nuestro marketplace digital para que el comercio de minerales polimetálicos sea trazable, justo y eficiente.
+          Conectamos mineros, compradores industriales, laboratorios y operadores logísticos en una sola
+          plataforma para ejecutar operaciones trazables, eficientes y alineadas con cumplimiento.
         </p>
         <div class="hero-actions">
           <a href="#contact" class="btn-primary">Solicitar una conversación</a>
@@ -95,10 +94,9 @@
     <!-- PLATFORM -->
     <section id="platform" class="section">
       <header class="section-header">
-        <h2>La plataforma digital de minerales</h2>
+        <h2>Una plataforma integrada para el comercio mineral</h2>
         <p>
-          Un entorno unificado para onboarding de proveedores, compra de minerales, análisis de laboratorio,
-          inventario, logística y operaciones financieras en la cadena de suministro polimetálica.
+          Integramos onboarding, ensayos, negociación, logística y liquidación en un flujo operativo único.
         </p>
       </header>
       <div class="grid platform-grid">
@@ -187,10 +185,9 @@
     <!-- TECHNOLOGY -->
     <section id="technology" class="section alt">
       <header class="section-header">
-        <h2>Arquitectura tecnológica</h2>
+        <h2>Tecnología diseñada para operar en tiempo real</h2>
         <p>
-          Construida como plataforma de microservicios en la nube con conectividad en tiempo real a
-          precios de metales y socios del ecosistema.
+          Arquitectura cloud y API-first con integración continua a precios de mercado y socios estratégicos.
         </p>
       </header>
       <div class="tech-layout">
@@ -250,10 +247,9 @@
     <!-- TRACEABILITY -->
     <section id="traceability" class="section">
       <header class="section-header">
-        <h2>Trazabilidad del mineral de punta a punta</h2>
+        <h2>Trazabilidad de origen a destino</h2>
         <p>
-          Desde la mina hasta el comprador final, cada transformación del lote queda registrada para
-          reportes verificables de ESG y cumplimiento.
+          Cada evento del lote queda registrado para generar evidencia verificable de cumplimiento y ESG.
         </p>
       </header>
       <div class="traceability-grid">
@@ -296,10 +292,9 @@
     <!-- MARKETPLACE -->
     <section id="marketplace" class="section alt">
       <header class="section-header">
-        <h2>Marketplace digital de minerales polimetálicos</h2>
+        <h2>Marketplace digital para oferta y demanda global</h2>
         <p>
-          Un espacio seguro y transparente donde los mineros publican lotes y los compradores globales
-          adquieren suministro trazable con valoración automática.
+          Un entorno seguro donde los mineros publican oferta y los compradores aseguran suministro trazable.
         </p>
       </header>
       <div class="marketplace-layout">
@@ -373,10 +368,9 @@
     <!-- ANALYTICS -->
     <section id="analytics" class="section">
       <header class="section-header">
-        <h2>Analíticas y dashboards de desempeño</h2>
+        <h2>Analíticas para decisiones comerciales</h2>
         <p>
-          Los dashboards en tiempo real ofrecen visibilidad sobre volúmenes de mineral, valor de transacciones,
-          desempeño de proveedores y KPIs de trazabilidad.
+          Dashboards en tiempo real para monitorear volúmenes, valor transado, desempeño y trazabilidad.
         </p>
       </header>
       <div class="analytics-grid">
@@ -427,7 +421,7 @@
     <!-- CIFRAS CLAVE -->
     <section id="figures" class="section alt">
       <header class="section-header">
-        <h2>Cifras que nos respaldan</h2>
+        <h2>Escala operativa con resultados medibles</h2>
         <p>
           Operamos con estándares de transparencia y trazabilidad en las principales regiones productoras y compradoras de minerales polimetálicos.
         </p>
@@ -459,7 +453,7 @@
     <!-- COMPROMISOS -->
     <section id="commitments" class="section">
       <header class="section-header">
-        <h2>Compromisos corporativos</h2>
+        <h2>Compromisos que sostienen cada operación</h2>
         <p>
           Nuestra operación se rige por principios de integridad, cumplimiento normativo y responsabilidad en la cadena de suministro.
         </p>
@@ -489,11 +483,10 @@
     <!-- ABOUT -->
     <section id="about" class="section alt">
       <header class="section-header">
-        <h2>Sobre la empresa</h2>
+        <h2>Quiénes somos</h2>
         <p>
-          Somos una empresa que comercializa minerales polimetálicos. Nuestra misión es ser un socio
-          de confianza en el comercio global de minerales, con cadenas de suministro transparentes,
-          eficientes y alineadas con ESG.
+          Somos un socio comercial especializado en minerales polimetálicos, enfocado en construir cadenas
+          de suministro confiables, eficientes y transparentes.
         </p>
       </header>
       <div class="about-layout">
@@ -524,10 +517,9 @@
     <!-- CONTACT -->
     <section id="contact" class="section contact">
       <header class="section-header">
-        <h2>Contacto y solicitar conversación</h2>
+        <h2>Conversemos sobre su operación</h2>
         <p>
-          Indica tus datos y nuestro equipo comercial se pondrá en contacto para hablar de cómo podemos
-          trabajar juntos: ya sea que vendas lotes de mineral, necesites suministro o coordines logística.
+          Comparta sus objetivos y nuestro equipo diseñará una propuesta para su cadena de suministro.
         </p>
       </header>
       <div class="contact-layout">
@@ -607,6 +599,17 @@
   <script>
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear().toString();
+
+    const revealTargets = document.querySelectorAll('.section, .card, .figure-item');
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        currentObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.12 });
+
+    revealTargets.forEach((element) => observer.observe(element));
   </script>
 </body>
 </html>
