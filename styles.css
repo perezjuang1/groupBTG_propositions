@@ -11,8 +11,8 @@
   --accent-cyan: #1c56ff;
   --danger: #b84c3e;
   --text: #121212;
-  --text-soft: #3d3d3d;
-  --muted: #68645d;
+  --text-soft: #2f2f38;
+  --muted: #545468;
   --pill-live: #3e17e6;
   --pill-offer: #1c56ff;
   --pill-closed: #65657a;
@@ -194,6 +194,13 @@ section {
   max-width: 880px;
   margin: 0 0 58px;
   text-align: left;
+}
+
+#technology .section-header,
+#traceability .section-header,
+#marketplace .section-header,
+#analytics .section-header {
+  margin-bottom: 68px;
 }
 
 .section-header h2 {
@@ -714,8 +721,9 @@ section {
 
 .market-table th,
 .market-table td {
-  padding: 6px 8px;
+  padding: 8px 10px;
   text-align: left;
+  line-height: 1.45;
 }
 
 .market-table thead {
@@ -810,7 +818,7 @@ section {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
   font-size: 0.84rem;
 }
 
@@ -818,6 +826,7 @@ section {
   display: flex;
   justify-content: space-between;
   gap: 16px;
+  align-items: flex-start;
 }
 
 .metric-list span:last-child {
@@ -1089,6 +1098,11 @@ section {
 }
 
 @media (max-width: 640px) {
+  .section {
+    padding-top: 92px;
+    padding-bottom: 92px;
+  }
+
   .hero-content h1 {
     font-size: 2.55rem;
   }
@@ -1099,6 +1113,20 @@ section {
 
   .workflow-diagram {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .market-table {
+    font-size: 0.8rem;
+  }
+
+  .market-table th,
+  .market-table td {
+    padding: 10px 8px;
+  }
+
+  .metric-list li {
+    flex-direction: column;
+    gap: 2px;
   }
 }
 
