@@ -7,10 +7,37 @@
   <!-- Origen HTTPS en producción -->
   <base href="https://www.grupobtg.com.co/" />
   <link rel="canonical" href="https://www.grupobtg.com.co/" />
+  <link rel="alternate" hreflang="es" href="https://www.grupobtg.com.co/?lang=es" />
+  <link rel="alternate" hreflang="en" href="https://www.grupobtg.com.co/?lang=en" />
+  <link rel="alternate" hreflang="fr" href="https://www.grupobtg.com.co/?lang=fr" />
+  <link rel="alternate" hreflang="x-default" href="https://www.grupobtg.com.co/?lang=es" />
   <meta property="og:url" content="https://www.grupobtg.com.co/" />
+  <meta name="description" content="GrupoBTG conecta commodities minerales con mercados globales a través de soluciones integrales en concentrados polimetálicos, logística, comercialización y cumplimiento." />
+  <meta name="keywords" content="commodities minerales, concentrados polimetálicos, trading de minerales, logística internacional, comercialización de minerales" />
+  <meta property="og:site_name" content="GrupoBTG" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:title" content="GrupoBTG – Commodities y concentrados polimetálicos" />
+  <meta property="og:description" content="Comercialización de concentrados polimetálicos y doré con integración de cadena de valor, logística y acceso a mercados internacionales." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GrupoBTG – Commodities y concentrados polimetálicos" />
+  <meta name="twitter:description" content="Soluciones integrales para comercialización de commodities minerales en mercados internacionales." />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%231d57ff'/%3E%3Cstop offset='0.6' stop-color='%234d22ff'/%3E%3Cstop offset='1' stop-color='%23ff5b8a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Arial,sans-serif' font-size='22' font-weight='700' fill='white'%3EB%3C/text%3E%3C/svg%3E" />
   <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%231d57ff'/%3E%3Cstop offset='0.6' stop-color='%234d22ff'/%3E%3Cstop offset='1' stop-color='%23ff5b8a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Arial,sans-serif' font-size='22' font-weight='700' fill='white'%3EB%3C/text%3E%3C/svg%3E" />
   <title>GrupoBTG – Commodities y concentrados polimetálicos</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "GrupoBTG",
+    "url": "https://www.grupobtg.com.co/",
+    "logo": "https://www.grupobtg.com.co/favicon.ico",
+    "inLanguage": ["es", "en", "fr"],
+    "description": "Integrated solutions for trading polymetallic concentrates and mineral commodities in global markets."
+  }
+  </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://www.grupobtg.com.co/styles.css" />
 </head>
@@ -1118,11 +1145,21 @@
     };
 
     const languageSelect = document.getElementById('language-select');
+    const params = new URLSearchParams(window.location.search);
+    const langFromQuery = params.get('lang');
+    const initialLang = ['es', 'en', 'fr'].includes(langFromQuery) ? langFromQuery : 'es';
+
     if (languageSelect) {
-      languageSelect.value = 'es';
-      languageSelect.addEventListener('change', (event) => setLanguage(event.target.value));
+      languageSelect.value = initialLang;
+      languageSelect.addEventListener('change', (event) => {
+        const nextLang = event.target.value;
+        setLanguage(nextLang);
+        const nextUrl = new URL(window.location.href);
+        nextUrl.searchParams.set('lang', nextLang);
+        window.history.replaceState({}, '', nextUrl.toString());
+      });
     }
-    setLanguage('es');
+    setLanguage(initialLang);
 
     document.querySelectorAll('img[data-fallback-src]').forEach((imgEl) => {
       imgEl.addEventListener('error', () => {
