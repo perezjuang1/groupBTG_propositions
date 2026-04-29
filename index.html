@@ -695,6 +695,369 @@
 
     let currentLang = 'es';
 
+    const getTexts = (selector) => [...document.querySelectorAll(selector)].map((el) => el.textContent.trim());
+    const setTexts = (selector, values) => {
+      const nodes = [...document.querySelectorAll(selector)];
+      nodes.forEach((node, idx) => {
+        if (typeof values[idx] === 'string') node.textContent = values[idx];
+      });
+    };
+
+    const baseContent = {
+      heroMetaLabels: getTexts('#home .meta-label'),
+      heroMetaValues: getTexts('#home .meta-value'),
+      heroNodes: getTexts('#home .node'),
+      heroDashboardTitle: getTexts('.hero-dashboard h3'),
+      heroDashboardMetricLabels: getTexts('.hero-dashboard .metric-label'),
+      heroDashboardMetricValues: getTexts('.hero-dashboard .metric-value'),
+      platformHeader: getTexts('#platform .section-header h2, #platform .section-header p'),
+      platformCardTitles: getTexts('#platform .platform-grid .card h3'),
+      platformCardParagraphs: getTexts('#platform .platform-grid .card p'),
+      platformCardItems: getTexts('#platform .platform-grid .card li'),
+      workflow: getTexts('#platform .workflow-diagram > div'),
+      technologyHeader: getTexts('#technology .section-header h2, #technology .section-header p'),
+      techMapTitle: getTexts('#technology .tech-diagram h3'),
+      techLayerTitles: getTexts('#technology .layer-title'),
+      techLayerBodies: getTexts('#technology .layer-body'),
+      techDetailTitles: getTexts('#technology .tech-details .card h3'),
+      techDetailParagraphs: getTexts('#technology .tech-details .card p'),
+      traceHeader: getTexts('#traceability .section-header h2, #traceability .section-header p'),
+      traceTitles: getTexts('#traceability .traceability-flow h3, #traceability .traceability-highlights .card h3'),
+      traceItems: getTexts('#traceability .trace-flow-list li'),
+      traceParagraphs: getTexts('#traceability .traceability-highlights .card p'),
+      marketHeader: getTexts('#marketplace .section-header h2, #marketplace .section-header p'),
+      marketBoardTitle: getTexts('#marketplace .marketplace-board h3'),
+      marketTableHeaders: getTexts('#marketplace .market-table th'),
+      marketTableCells: getTexts('#marketplace .market-table tbody td'),
+      marketPointTitles: getTexts('#marketplace .marketplace-points .card h3'),
+      marketPointParagraphs: getTexts('#marketplace .marketplace-points .card p'),
+      analyticsHeader: getTexts('#analytics .section-header h2, #analytics .section-header p'),
+      analyticsTitles: getTexts('#analytics .analytics-panel h3'),
+      analyticsChartTitles: getTexts('#analytics .chart-title'),
+      analyticsMetricLarge: getTexts('#analytics .metric-large'),
+      analyticsMetricCaption: getTexts('#analytics .metric-caption'),
+      analyticsListLeft: getTexts('#analytics .metric-list li span:first-child'),
+      analyticsListRight: getTexts('#analytics .metric-list li span:last-child'),
+      analyticsFinalParagraph: getTexts('#analytics .analytics-panel:nth-child(3) p'),
+      analyticsDonutSmall: getTexts('#analytics .donut-center small'),
+      figuresHeader: getTexts('#figures .section-header h2, #figures .section-header p'),
+      figureLabels: getTexts('#figures .figure-label'),
+      commitmentsHeader: getTexts('#commitments .section-header h2, #commitments .section-header p'),
+      commitmentsTitles: getTexts('#commitments .commitment-card h3'),
+      commitmentsParagraphs: getTexts('#commitments .commitment-card p'),
+      aboutHeader: getTexts('#about .section-header h2, #about .section-header p'),
+      aboutTitles: getTexts('#about .about-layout .card h3'),
+      aboutParagraphs: getTexts('#about .about-layout .card p'),
+      contactInfoTitle: getTexts('#contact .contact-info h3'),
+      contactInfoParagraph: getTexts('#contact .contact-info > p'),
+      contactInfoListLeft: getTexts('#contact .contact-info .metric-list li span:first-child'),
+      contactInfoListRight: getTexts('#contact .contact-info .metric-list li span:last-child'),
+      contactInfoSmall: getTexts('#contact .contact-info .small'),
+      footerLinks: getTexts('.footer-links span')
+    };
+
+    const localizedContent = {
+      en: {
+        heroMetaLabels: ['Strategic message', 'What we do'],
+        heroMetaValues: [
+          'We operate at the core of the mineral supply chain, integrating producers, logistics, compliance and international markets to maximize value in every transaction.',
+          'Trading polymetallic concentrates and doré • Structuring commodities operations • Logistics and customs management • Access to international markets'
+        ],
+        heroNodes: ['Producers', 'Industrial buyers', 'Laboratories', 'Logistics', 'Digital platform'],
+        heroDashboardTitle: ['Operational edge'],
+        heroDashboardMetricLabels: ['Coverage', 'Compliance'],
+        heroDashboardMetricValues: ['Global markets', 'Strict standards'],
+        platformHeader: ['Business model: full value-chain integration', 'Inspired by global traders: we operate from origin to international destination.'],
+        platformCardTitles: ['1. Origin (Producers)', '2. Structuring (legal and administrative)', '3. Logistics (transport and exports)', '4. Commercialization (trading and sales)', '5. Destination (international markets)', 'Model differentiator'],
+        platformCardParagraphs: [
+          'We begin at mineral origin with operational assessment, documentation and producer commercial readiness.',
+          'We structure each operation to ensure traceability, legal certainty and execution efficiency.',
+          'We coordinate complex transport and export chains to ensure operational continuity and control.',
+          'We connect supply with qualified buyers and structure competitive deal closures.',
+          'We execute access to international markets with traceability, compliance and risk control.',
+          'We do not operate in isolated steps: we integrate and manage the full chain end to end.'
+        ],
+        platformCardItems: [
+          'Direct producer engagement', 'Document and capability assessment', 'Preparation for formal operations',
+          'Contract design', 'Legal and regulatory compliance', 'Administrative support management',
+          'Domestic and international logistics', 'Export coordination', 'Customs and document management',
+          'Contract negotiation', 'Price and term optimization', 'End-to-end closing management',
+          'Connection to global buyers', 'International regulatory compliance', 'Execution through final consumption',
+          'Presence from production to destination', 'Reduced operational friction', 'Higher value per operation'
+        ],
+        workflow: ['Origin', 'Structuring', 'Logistics', 'Commercialization', 'Destination', 'Execution', 'Value'],
+        technologyHeader: ['Professional and scalable services', 'We manage complex operations through integrated services to ensure commercial and operational continuity.'],
+        techMapTitle: ['Integrated services map'],
+        techLayerTitles: ['Operations structuring', 'Administrative services', 'Integrated logistics', 'Customs services', 'Commercialization and trading'],
+        techLayerBodies: [
+          'Commercial design • Legal compliance • Contract management',
+          'Document management • Operational support • Process control',
+          'Domestic and international transport • Export coordination • Supply chain',
+          'Procedures before DIAN • Mineral exports • Regulatory compliance',
+          'Access to international buyers • Negotiation • Conditions optimization'
+        ],
+        techDetailTitles: ['Operations structuring', 'Logistics and customs', 'Trading and market'],
+        techDetailParagraphs: [
+          'We design robust commercial operations with legal and contractual support to execute with lower risk.',
+          'We integrate transport, exports and customs management to ensure efficiency in complex supply chains.',
+          'We connect producers with international demand to improve pricing, terms and commercial continuity.'
+        ],
+        traceHeader: ['Products and markets', 'We operate products aligned with international demand and formal commercialization standards.'],
+        traceTitles: ['Polymetallic concentrates', 'Doré', 'International markets', 'Formal and traceable operation'],
+        traceItems: ['1 Gold', '2 Silver', '3 Base metals'],
+        traceParagraphs: [
+          'We manage doré bars and polymetallic concentrates aligned with real practices of the global commodities market.',
+          'We structure commercial connections between producers and international buyers under strict standards.',
+          'We ensure document control, compliance and traceability for every buy and sell transaction.'
+        ],
+        marketHeader: ['Value proposition', 'What makes us different? We execute, integrate and connect the entire operation with a market-driven view.'],
+        marketBoardTitle: ['Competitive advantages'],
+        marketTableHeaders: ['Pillar', 'Approach', 'Impact'],
+        marketTableCells: ['Full integration', 'Complete execution', 'End to end', 'Market focus', 'Commercial connection', 'Global demand', 'Compliance and transparency', 'Demanding standards', 'Controlled risk'],
+        marketPointTitles: ['Operational efficiency', 'Allied network', 'Commercial intelligence'],
+        marketPointParagraphs: [
+          'We reduce time, costs and friction at every step of the value chain.',
+          'We connect supply and demand with reliable players in origin, logistics and international markets.',
+          'We combine market information and operational expertise to optimize negotiation conditions.'
+        ],
+        analyticsHeader: ['Work process', 'A clear method to structure, execute and close operations with efficiency and control.'],
+        analyticsTitles: ['Execution path', 'Key stages', 'Final message'],
+        analyticsChartTitles: ['Process stages', 'Expected outcome'],
+        analyticsMetricLarge: ['Integrated execution'],
+        analyticsMetricCaption: ['From initial analysis to commercial closing'],
+        analyticsListLeft: ['1. Client assessment', '2. Operation structuring', '3. Logistics and legal management', '4. Commercialization', '5. Execution and closing'],
+        analyticsListRight: ['Diagnosis', 'Design', 'Coordination', 'Negotiation', 'Result'],
+        analyticsFinalParagraph: ['We enable the efficient flow of minerals from origin to global markets, generating value, trust and sustainability in every operation.'],
+        analyticsDonutSmall: ['Integrated chain'],
+        figuresHeader: ['Multinational-style edge', 'A proposal focused on scale, operational control and access to formal markets.'],
+        figureLabels: ['Connection to global markets', 'Integration across the full value chain', 'End-to-end logistics solutions', 'Strict regulatory compliance'],
+        commitmentsHeader: ['Operating philosophy', 'A responsible trading approach to generate sustainable value across the chain.'],
+        commitmentsTitles: ['We generate value at every link', 'We reduce operational friction', 'We promote sustainable operations'],
+        commitmentsParagraphs: [
+          'We design operations to improve outcomes for producers, logistics partners and buyers.',
+          'We integrate administrative, legal and logistics processes for smoother execution.',
+          'We enable access to formal markets under transparency, compliance and responsibility criteria.'
+        ],
+        aboutHeader: ['Who we are', 'We are a Colombian company based in Medellin, specialized in end-to-end operations management for mineral and commodities commercialization.'],
+        aboutTitles: ['Approach', 'Mission', 'Vision'],
+        aboutParagraphs: [
+          'We act as a strategic partner connecting producers and buyers, integrating administrative, logistics, customs and commercial services from origin to international markets.',
+          'To structure and manage commodities operations end to end, enabling commercialization of polymetallic concentrates and doré through efficient, secure solutions aligned with international standards.',
+          'To become a relevant regional player in mineral commercialization, recognized for operational capability, transparency and access to global markets.'
+        ],
+        contactInfoTitle: ['Trade with us'],
+        contactInfoParagraph: ['We facilitate operations for polymetallic concentrates and doré through an integrated approach in structuring, logistics, compliance and international commercial connection.'],
+        contactInfoListLeft: ['Full integration', 'Market focus', 'Compliance'],
+        contactInfoListRight: ['End-to-end execution', 'Global supply-demand connection', 'Local and international regulation'],
+        contactInfoSmall: ['From origin to destination, we structure efficient, transparent and sustainable operations.'],
+        footerLinks: ['Privacy', 'Security', 'ESG and compliance']
+      },
+      fr: {
+        heroMetaLabels: ['Message stratégique', 'Ce que nous faisons'],
+        heroMetaValues: [
+          'Nous opérons au coeur de la chaîne d’approvisionnement minérale en intégrant producteurs, logistique, conformité et marchés internationaux pour maximiser la valeur de chaque opération.',
+          'Commercialisation de concentrés polymétalliques et de doré • Structuration d’opérations de commodities • Gestion logistique et douanière • Accès aux marchés internationaux'
+        ],
+        heroNodes: ['Producteurs', 'Acheteurs industriels', 'Laboratoires', 'Logistique', 'Plateforme digitale'],
+        heroDashboardTitle: ['Différentiel opérationnel'],
+        heroDashboardMetricLabels: ['Couverture', 'Conformité'],
+        heroDashboardMetricValues: ['Marchés mondiaux', 'Normes strictes'],
+        platformHeader: ['Modèle économique : intégration complète de la chaîne de valeur', 'Inspiré des traders mondiaux : nous opérons de l’origine jusqu’à la destination internationale.'],
+        platformCardTitles: ['1. Origine (Producteurs)', '2. Structuration (juridique et administrative)', '3. Logistique (transport et exportation)', '4. Commercialisation (trading et ventes)', '5. Destination (marchés internationaux)', 'Différentiel du modèle'],
+        platformCardParagraphs: [
+          'Nous commençons à l’origine du minerai avec évaluation opérationnelle, documentation et préparation commerciale du producteur.',
+          'Nous structurons l’opération pour garantir traçabilité, sécurité juridique et efficacité d’exécution.',
+          'Nous coordonnons des chaînes complexes de transport et d’exportation pour assurer continuité et contrôle.',
+          'Nous connectons l’offre à des acheteurs qualifiés et structurons des clôtures commerciales compétitives.',
+          'Nous exécutons l’accès aux marchés internationaux avec traçabilité, conformité et contrôle des risques.',
+          'Nous n’opérons pas par étapes isolées : nous intégrons et gérons toute la chaîne de bout en bout.'
+        ],
+        platformCardItems: [
+          'Relation directe avec les producteurs', 'Évaluation documentaire et des capacités', 'Préparation à l’opération formelle',
+          'Conception contractuelle', 'Conformité juridique et réglementaire', 'Gestion administrative de support',
+          'Logistique nationale et internationale', 'Coordination des exportations', 'Gestion douanière et documentaire',
+          'Négociation de contrats', 'Optimisation des prix et conditions', 'Gestion intégrale de clôture',
+          'Connexion avec acheteurs mondiaux', 'Conformité réglementaire internationale', 'Exécution jusqu’à la consommation finale',
+          'Présence de la production à la destination', 'Réduction des frictions opérationnelles', 'Plus de valeur par opération'
+        ],
+        workflow: ['Origine', 'Structuration', 'Logistique', 'Commercialisation', 'Destination', 'Exécution', 'Valeur'],
+        technologyHeader: ['Services professionnels et évolutifs', 'Nous gérons des opérations complexes avec des services intégrés pour assurer continuité commerciale et opérationnelle.'],
+        techMapTitle: ['Carte des services intégrés'],
+        techLayerTitles: ['Structuration des opérations', 'Services administratifs', 'Logistique intégrale', 'Services douaniers', 'Commercialisation et trading'],
+        techLayerBodies: [
+          'Conception commerciale • Conformité juridique • Gestion contractuelle',
+          'Gestion documentaire • Support opérationnel • Contrôle des processus',
+          'Transport national et international • Coordination des exportations • Chaîne d’approvisionnement',
+          'Formalités DIAN • Exportation de minéraux • Conformité réglementaire',
+          'Accès aux acheteurs internationaux • Négociation • Optimisation des conditions'
+        ],
+        techDetailTitles: ['Structuration des opérations', 'Logistique et douanes', 'Trading et marché'],
+        techDetailParagraphs: [
+          'Nous concevons des opérations commerciales solides avec appui juridique et contractuel pour exécuter avec moins de risque.',
+          'Nous intégrons transport, exportation et gestion douanière pour garantir efficacité dans les chaînes complexes.',
+          'Nous connectons producteurs et demande internationale pour améliorer prix, conditions et continuité commerciale.'
+        ],
+        traceHeader: ['Produits et marchés', 'Nous opérons des produits alignés sur la demande internationale et les standards de commercialisation formelle.'],
+        traceTitles: ['Concentrés polymétalliques', 'Doré', 'Marchés internationaux', 'Opération formelle et traçable'],
+        traceItems: ['1 Or', '2 Argent', '3 Métaux de base'],
+        traceParagraphs: [
+          'Nous gérons des barres doré et concentrés polymétalliques selon les pratiques réelles du marché mondial des commodities.',
+          'Nous structurons la connexion commerciale entre producteurs et acheteurs internationaux sous des standards exigeants.',
+          'Nous assurons contrôle documentaire, conformité et traçabilité pour chaque opération d’achat et de vente.'
+        ],
+        marketHeader: ['Proposition de valeur', 'Qu’est-ce qui nous différencie ? Nous exécutons, intégrons et connectons toute l’opération avec une vision marché.'],
+        marketBoardTitle: ['Avantages compétitifs'],
+        marketTableHeaders: ['Pilier', 'Approche', 'Impact'],
+        marketTableCells: ['Intégration totale', 'Exécution complète', 'Bout en bout', 'Orientation marché', 'Connexion commerciale', 'Demande mondiale', 'Conformité et transparence', 'Standards exigeants', 'Risque maîtrisé'],
+        marketPointTitles: ['Efficacité opérationnelle', 'Réseau d’alliés', 'Intelligence commerciale'],
+        marketPointParagraphs: [
+          'Nous réduisons délais, coûts et frictions à chaque maillon de la chaîne de valeur.',
+          'Nous connectons offre et demande avec des acteurs fiables en origine, logistique et marchés internationaux.',
+          'Nous combinons information marché et expérience opérationnelle pour optimiser les négociations.'
+        ],
+        analyticsHeader: ['Processus de travail', 'Une méthode claire pour structurer, exécuter et clôturer les opérations avec efficacité et contrôle.'],
+        analyticsTitles: ['Parcours d’exécution', 'Étapes clés', 'Message final'],
+        analyticsChartTitles: ['Étapes du processus', 'Résultat attendu'],
+        analyticsMetricLarge: ['Exécution intégrale'],
+        analyticsMetricCaption: ['De l’analyse initiale à la clôture commerciale'],
+        analyticsListLeft: ['1. Évaluation du client', '2. Structuration de l’opération', '3. Gestion logistique et juridique', '4. Commercialisation', '5. Exécution et clôture'],
+        analyticsListRight: ['Diagnostic', 'Conception', 'Coordination', 'Négociation', 'Résultat'],
+        analyticsFinalParagraph: ['Nous facilitons le flux efficace des minéraux de l’origine aux marchés mondiaux, en générant valeur, confiance et durabilité dans chaque opération.'],
+        analyticsDonutSmall: ['Chaîne intégrée'],
+        figuresHeader: ['Différentiel type multinational', 'Une proposition axée sur l’échelle, le contrôle opérationnel et l’accès aux marchés formels.'],
+        figureLabels: ['Connexion aux marchés mondiaux', 'Intégration de toute la chaîne de valeur', 'Solutions logistiques complètes', 'Conformité réglementaire stricte'],
+        commitmentsHeader: ['Philosophie opérationnelle', 'Une approche de trading responsable pour générer de la valeur durable sur toute la chaîne.'],
+        commitmentsTitles: ['Nous générons de la valeur à chaque maillon', 'Nous réduisons les frictions opérationnelles', 'Nous favorisons des opérations durables'],
+        commitmentsParagraphs: [
+          'Nous concevons des opérations pour améliorer les résultats des producteurs, partenaires logistiques et acheteurs.',
+          'Nous intégrons processus administratifs, juridiques et logistiques pour opérer avec plus de fluidité.',
+          'Nous facilitons l’accès aux marchés formels selon des critères de transparence, conformité et responsabilité.'
+        ],
+        aboutHeader: ['Qui sommes-nous', 'Nous sommes une entreprise colombienne basée à Medellín, spécialisée dans la gestion intégrale d’opérations pour la commercialisation de minéraux et commodities.'],
+        aboutTitles: ['Approche', 'Mission', 'Vision'],
+        aboutParagraphs: [
+          'Nous agissons comme partenaire stratégique reliant producteurs et acheteurs, en intégrant services administratifs, logistiques, douaniers et commerciaux de l’origine aux marchés internationaux.',
+          'Structurer et gérer des opérations de commodities de façon intégrale, en facilitant la commercialisation de concentrés polymétalliques et doré via des solutions efficaces et sûres.',
+          'Devenir un acteur régional de référence dans la commercialisation des minéraux, reconnu pour sa capacité opérationnelle, sa transparence et son accès aux marchés mondiaux.'
+        ],
+        contactInfoTitle: ['Commercialiser avec nous'],
+        contactInfoParagraph: ['Nous facilitons des opérations pour concentrés polymétalliques et doré avec une approche intégrale en structuration, logistique, conformité et connexion commerciale internationale.'],
+        contactInfoListLeft: ['Intégration totale', 'Orientation marché', 'Conformité'],
+        contactInfoListRight: ['Exécution de bout en bout', 'Connexion offre-demande mondiale', 'Normative locale et internationale'],
+        contactInfoSmall: ['De l’origine à la destination, nous structurons des opérations efficaces, transparentes et durables.'],
+        footerLinks: ['Confidentialité', 'Sécurité', 'ESG et conformité']
+      }
+    };
+
+    const applyExtendedContent = (lang) => {
+      if (lang === 'es') {
+        setTexts('#home .meta-label', baseContent.heroMetaLabels);
+        setTexts('#home .meta-value', baseContent.heroMetaValues);
+        setTexts('#home .node', baseContent.heroNodes);
+        setTexts('.hero-dashboard h3', baseContent.heroDashboardTitle);
+        setTexts('.hero-dashboard .metric-label', baseContent.heroDashboardMetricLabels);
+        setTexts('.hero-dashboard .metric-value', baseContent.heroDashboardMetricValues);
+        setTexts('#platform .section-header h2, #platform .section-header p', baseContent.platformHeader);
+        setTexts('#platform .platform-grid .card h3', baseContent.platformCardTitles);
+        setTexts('#platform .platform-grid .card p', baseContent.platformCardParagraphs);
+        setTexts('#platform .platform-grid .card li', baseContent.platformCardItems);
+        setTexts('#platform .workflow-diagram > div', baseContent.workflow);
+        setTexts('#technology .section-header h2, #technology .section-header p', baseContent.technologyHeader);
+        setTexts('#technology .tech-diagram h3', baseContent.techMapTitle);
+        setTexts('#technology .layer-title', baseContent.techLayerTitles);
+        setTexts('#technology .layer-body', baseContent.techLayerBodies);
+        setTexts('#technology .tech-details .card h3', baseContent.techDetailTitles);
+        setTexts('#technology .tech-details .card p', baseContent.techDetailParagraphs);
+        setTexts('#traceability .section-header h2, #traceability .section-header p', baseContent.traceHeader);
+        setTexts('#traceability .traceability-flow h3, #traceability .traceability-highlights .card h3', baseContent.traceTitles);
+        setTexts('#traceability .trace-flow-list li', baseContent.traceItems);
+        setTexts('#traceability .traceability-highlights .card p', baseContent.traceParagraphs);
+        setTexts('#marketplace .section-header h2, #marketplace .section-header p', baseContent.marketHeader);
+        setTexts('#marketplace .marketplace-board h3', baseContent.marketBoardTitle);
+        setTexts('#marketplace .market-table th', baseContent.marketTableHeaders);
+        setTexts('#marketplace .market-table tbody td', baseContent.marketTableCells);
+        setTexts('#marketplace .marketplace-points .card h3', baseContent.marketPointTitles);
+        setTexts('#marketplace .marketplace-points .card p', baseContent.marketPointParagraphs);
+        setTexts('#analytics .section-header h2, #analytics .section-header p', baseContent.analyticsHeader);
+        setTexts('#analytics .analytics-panel h3', baseContent.analyticsTitles);
+        setTexts('#analytics .chart-title', baseContent.analyticsChartTitles);
+        setTexts('#analytics .metric-large', baseContent.analyticsMetricLarge);
+        setTexts('#analytics .metric-caption', baseContent.analyticsMetricCaption);
+        setTexts('#analytics .metric-list li span:first-child', baseContent.analyticsListLeft);
+        setTexts('#analytics .metric-list li span:last-child', baseContent.analyticsListRight);
+        setTexts('#analytics .analytics-panel:nth-child(3) p', baseContent.analyticsFinalParagraph);
+        setTexts('#analytics .donut-center small', baseContent.analyticsDonutSmall);
+        setTexts('#figures .section-header h2, #figures .section-header p', baseContent.figuresHeader);
+        setTexts('#figures .figure-label', baseContent.figureLabels);
+        setTexts('#commitments .section-header h2, #commitments .section-header p', baseContent.commitmentsHeader);
+        setTexts('#commitments .commitment-card h3', baseContent.commitmentsTitles);
+        setTexts('#commitments .commitment-card p', baseContent.commitmentsParagraphs);
+        setTexts('#about .section-header h2, #about .section-header p', baseContent.aboutHeader);
+        setTexts('#about .about-layout .card h3', baseContent.aboutTitles);
+        setTexts('#about .about-layout .card p', baseContent.aboutParagraphs);
+        setTexts('#contact .contact-info h3', baseContent.contactInfoTitle);
+        setTexts('#contact .contact-info > p', baseContent.contactInfoParagraph);
+        setTexts('#contact .contact-info .metric-list li span:first-child', baseContent.contactInfoListLeft);
+        setTexts('#contact .contact-info .metric-list li span:last-child', baseContent.contactInfoListRight);
+        setTexts('#contact .contact-info .small', baseContent.contactInfoSmall);
+        setTexts('.footer-links span', baseContent.footerLinks);
+        return;
+      }
+
+      const c = localizedContent[lang];
+      if (!c) return;
+      setTexts('#home .meta-label', c.heroMetaLabels);
+      setTexts('#home .meta-value', c.heroMetaValues);
+      setTexts('#home .node', c.heroNodes);
+      setTexts('.hero-dashboard h3', c.heroDashboardTitle);
+      setTexts('.hero-dashboard .metric-label', c.heroDashboardMetricLabels);
+      setTexts('.hero-dashboard .metric-value', c.heroDashboardMetricValues);
+      setTexts('#platform .section-header h2, #platform .section-header p', c.platformHeader);
+      setTexts('#platform .platform-grid .card h3', c.platformCardTitles);
+      setTexts('#platform .platform-grid .card p', c.platformCardParagraphs);
+      setTexts('#platform .platform-grid .card li', c.platformCardItems);
+      setTexts('#platform .workflow-diagram > div', c.workflow);
+      setTexts('#technology .section-header h2, #technology .section-header p', c.technologyHeader);
+      setTexts('#technology .tech-diagram h3', c.techMapTitle);
+      setTexts('#technology .layer-title', c.techLayerTitles);
+      setTexts('#technology .layer-body', c.techLayerBodies);
+      setTexts('#technology .tech-details .card h3', c.techDetailTitles);
+      setTexts('#technology .tech-details .card p', c.techDetailParagraphs);
+      setTexts('#traceability .section-header h2, #traceability .section-header p', c.traceHeader);
+      setTexts('#traceability .traceability-flow h3, #traceability .traceability-highlights .card h3', c.traceTitles);
+      setTexts('#traceability .trace-flow-list li', c.traceItems);
+      setTexts('#traceability .traceability-highlights .card p', c.traceParagraphs);
+      setTexts('#marketplace .section-header h2, #marketplace .section-header p', c.marketHeader);
+      setTexts('#marketplace .marketplace-board h3', c.marketBoardTitle);
+      setTexts('#marketplace .market-table th', c.marketTableHeaders);
+      setTexts('#marketplace .market-table tbody td', c.marketTableCells);
+      setTexts('#marketplace .marketplace-points .card h3', c.marketPointTitles);
+      setTexts('#marketplace .marketplace-points .card p', c.marketPointParagraphs);
+      setTexts('#analytics .section-header h2, #analytics .section-header p', c.analyticsHeader);
+      setTexts('#analytics .analytics-panel h3', c.analyticsTitles);
+      setTexts('#analytics .chart-title', c.analyticsChartTitles);
+      setTexts('#analytics .metric-large', c.analyticsMetricLarge);
+      setTexts('#analytics .metric-caption', c.analyticsMetricCaption);
+      setTexts('#analytics .metric-list li span:first-child', c.analyticsListLeft);
+      setTexts('#analytics .metric-list li span:last-child', c.analyticsListRight);
+      setTexts('#analytics .analytics-panel:nth-child(3) p', c.analyticsFinalParagraph);
+      setTexts('#analytics .donut-center small', c.analyticsDonutSmall);
+      setTexts('#figures .section-header h2, #figures .section-header p', c.figuresHeader);
+      setTexts('#figures .figure-label', c.figureLabels);
+      setTexts('#commitments .section-header h2, #commitments .section-header p', c.commitmentsHeader);
+      setTexts('#commitments .commitment-card h3', c.commitmentsTitles);
+      setTexts('#commitments .commitment-card p', c.commitmentsParagraphs);
+      setTexts('#about .section-header h2, #about .section-header p', c.aboutHeader);
+      setTexts('#about .about-layout .card h3', c.aboutTitles);
+      setTexts('#about .about-layout .card p', c.aboutParagraphs);
+      setTexts('#contact .contact-info h3', c.contactInfoTitle);
+      setTexts('#contact .contact-info > p', c.contactInfoParagraph);
+      setTexts('#contact .contact-info .metric-list li span:first-child', c.contactInfoListLeft);
+      setTexts('#contact .contact-info .metric-list li span:last-child', c.contactInfoListRight);
+      setTexts('#contact .contact-info .small', c.contactInfoSmall);
+      setTexts('.footer-links span', c.footerLinks);
+    };
+
     const setLanguage = (lang) => {
       const t = i18n[lang] || i18n.es;
       currentLang = lang in i18n ? lang : 'es';
@@ -736,6 +1099,7 @@
       document.getElementById('country').placeholder = t.placeholders.country;
       document.getElementById('message').placeholder = t.placeholders.message;
       document.getElementById('contact-submit').textContent = t.submit;
+      applyExtendedContent(currentLang);
     };
 
     const languageSelect = document.getElementById('language-select');
