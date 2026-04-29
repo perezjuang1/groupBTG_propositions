@@ -154,6 +154,17 @@ section {
   background: #f6f4ff;
 }
 
+.language-select {
+  border: 1px solid rgba(18, 18, 18, 0.24);
+  background: #fff;
+  color: var(--text-soft);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
 .section {
   padding: 116px 7vw;
 }

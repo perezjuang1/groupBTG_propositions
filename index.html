@@ -21,16 +21,21 @@
       </div>
     </div>
     <nav class="main-nav">
-      <a href="#home">Inicio</a>
-      <a href="#platform">Modelo</a>
-      <a href="#technology">Servicios</a>
-      <a href="#traceability">Productos</a>
-      <a href="#marketplace">Valor</a>
-      <a href="#analytics">Proceso</a>
-      <a href="#figures">Cifras</a>
-      <a href="#commitments">Filosofía</a>
-      <a href="#about">Nosotros</a>
-      <a href="#contact" class="btn-outline">Contacto</a>
+      <a href="#home" id="nav-home">Inicio</a>
+      <a href="#platform" id="nav-platform">Modelo</a>
+      <a href="#technology" id="nav-technology">Servicios</a>
+      <a href="#traceability" id="nav-traceability">Productos</a>
+      <a href="#marketplace" id="nav-marketplace">Valor</a>
+      <a href="#analytics" id="nav-analytics">Proceso</a>
+      <a href="#figures" id="nav-figures">Cifras</a>
+      <a href="#commitments" id="nav-commitments">Filosofía</a>
+      <a href="#about" id="nav-about">Nosotros</a>
+      <a href="#contact" class="btn-outline" id="nav-contact">Contacto</a>
+      <select id="language-select" class="language-select" aria-label="Seleccionar idioma">
+        <option value="es">Español</option>
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+      </select>
     </nav>
   </header>
 
@@ -38,14 +43,14 @@
     <!-- HOME -->
     <section id="home" class="section hero">
       <div class="hero-content">
-        <h1>Conectamos los commodities minerales con los mercados globales</h1>
-        <p>
+        <h1 id="hero-title">Conectamos los commodities minerales con los mercados globales</h1>
+        <p id="hero-text">
           Soluciones integrales para la comercialización de concentrados polimetálicos y doré.
           Desde Colombia, estructuramos operaciones eficientes, seguras y transparentes a lo largo de toda la cadena de valor.
         </p>
         <div class="hero-actions">
-          <a href="#contact" class="btn-primary">Solicitar una conversación</a>
-          <a href="#platform" class="btn-ghost">Cómo operamos</a>
+          <a href="#contact" class="btn-primary" id="hero-cta-primary">Solicitar una conversación</a>
+          <a href="#platform" class="btn-ghost" id="hero-cta-secondary">Cómo operamos</a>
         </div>
         <div class="hero-meta">
           <div>
@@ -506,55 +511,55 @@
     <!-- CONTACT -->
     <section id="contact" class="section contact">
       <header class="section-header">
-        <h2>Conversemos sobre su operación</h2>
-        <p>
+        <h2 id="contact-title">Conversemos sobre su operación</h2>
+        <p id="contact-subtitle">
           Comparta sus objetivos y nuestro equipo diseñará una propuesta para su cadena de suministro.
         </p>
       </header>
       <div class="contact-layout">
-        <form class="card contact-form">
+        <form class="card contact-form" id="contact-form">
           <div class="form-row">
             <div class="form-field">
-              <label for="name">Nombre completo</label>
+              <label for="name" id="label-name">Nombre completo</label>
               <input id="name" type="text" placeholder="Tu nombre" />
             </div>
             <div class="form-field">
-              <label for="company">Empresa</label>
+              <label for="company" id="label-company">Empresa</label>
               <input id="company" type="text" placeholder="Nombre de la empresa" />
             </div>
           </div>
           <div class="form-row">
             <div class="form-field">
-              <label for="email">Email laboral</label>
+              <label for="email" id="label-email">Email laboral</label>
               <input id="email" type="email" placeholder="tu@empresa.com" />
             </div>
             <div class="form-field">
-              <label for="role">Cargo</label>
+              <label for="role" id="label-role">Cargo</label>
               <input id="role" type="text" placeholder="ej. Jefe de abastecimiento, CFO" />
             </div>
           </div>
           <div class="form-row">
             <div class="form-field">
-              <label for="segment">Represento a</label>
+              <label for="segment" id="label-segment">Represento a</label>
               <select id="segment">
-                <option>Productor de commodities minerales</option>
-                <option>Refinería / fundición</option>
-                <option>Trader internacional</option>
-                <option>Laboratorio</option>
-                <option>Operador logístico / exportador</option>
-                <option>Otro</option>
+                <option id="segment-option-1">Productor de commodities minerales</option>
+                <option id="segment-option-2">Refinería / fundición</option>
+                <option id="segment-option-3">Trader internacional</option>
+                <option id="segment-option-4">Laboratorio</option>
+                <option id="segment-option-5">Operador logístico / exportador</option>
+                <option id="segment-option-6">Otro</option>
               </select>
             </div>
             <div class="form-field">
-              <label for="country">País</label>
+              <label for="country" id="label-country">País</label>
               <input id="country" type="text" placeholder="País" />
             </div>
           </div>
           <div class="form-field">
-            <label for="message">¿Qué te gustaría lograr?</label>
+            <label for="message" id="label-message">¿Qué te gustaría lograr?</label>
             <textarea id="message" rows="4" placeholder="ej. comercializar concentrados polimetálicos y doré, asegurar suministro de commodities minerales o coordinar logística internacional."></textarea>
           </div>
-          <button type="submit" class="btn-primary full-width">Enviar solicitud</button>
+          <button type="submit" class="btn-primary full-width" id="contact-submit">Enviar por WhatsApp</button>
         </form>
         <div class="card contact-info">
           <figure class="media-frame contact-photo">
@@ -590,6 +595,186 @@
   <script>
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear().toString();
+
+    const i18n = {
+      es: {
+        htmlLang: 'es',
+        title: 'GrupoBTG – Commodities y concentrados polimetálicos',
+        nav: ['Inicio', 'Modelo', 'Servicios', 'Productos', 'Valor', 'Proceso', 'Cifras', 'Filosofía', 'Nosotros', 'Contacto'],
+        heroTitle: 'Conectamos los commodities minerales con los mercados globales',
+        heroText: 'Soluciones integrales para la comercialización de concentrados polimetálicos y doré. Desde Colombia, estructuramos operaciones eficientes, seguras y transparentes a lo largo de toda la cadena de valor.',
+        heroPrimary: 'Solicitar una conversación',
+        heroSecondary: 'Cómo operamos',
+        contactTitle: 'Conversemos sobre su operación',
+        contactSubtitle: 'Comparta sus objetivos y nuestro equipo diseñará una propuesta para su cadena de suministro.',
+        labels: ['Nombre completo', 'Empresa', 'Email laboral', 'Cargo', 'Represento a', 'País', '¿Qué te gustaría lograr?'],
+        segmentOptions: [
+          'Productor de commodities minerales',
+          'Refinería / fundición',
+          'Trader internacional',
+          'Laboratorio',
+          'Operador logístico / exportador',
+          'Otro'
+        ],
+        placeholders: {
+          name: 'Tu nombre',
+          company: 'Nombre de la empresa',
+          role: 'ej. Jefe de abastecimiento, CFO',
+          country: 'País',
+          message: 'ej. comercializar concentrados polimetálicos y doré, asegurar suministro de commodities minerales o coordinar logística internacional.'
+        },
+        submit: 'Enviar por WhatsApp',
+        waIntro: 'Hola, quiero conversar sobre una operación de commodities minerales.',
+        waFields: ['Nombre', 'Empresa', 'Email', 'Cargo', 'Segmento', 'País', 'Objetivo'],
+        waMissing: 'No informado'
+      },
+      en: {
+        htmlLang: 'en',
+        title: 'GrupoBTG – Commodities and polymetallic concentrates',
+        nav: ['Home', 'Model', 'Services', 'Products', 'Value', 'Process', 'Figures', 'Philosophy', 'About', 'Contact'],
+        heroTitle: 'We connect mineral commodities with global markets',
+        heroText: 'Integrated solutions for trading polymetallic concentrates and doré. From Colombia, we structure efficient, secure and transparent operations across the full value chain.',
+        heroPrimary: 'Request a conversation',
+        heroSecondary: 'How we operate',
+        contactTitle: 'Let us discuss your operation',
+        contactSubtitle: 'Share your objectives and our team will design a proposal for your supply chain.',
+        labels: ['Full name', 'Company', 'Business email', 'Role', 'I represent', 'Country', 'What would you like to achieve?'],
+        segmentOptions: [
+          'Mineral commodities producer',
+          'Refinery / smelter',
+          'International trader',
+          'Laboratory',
+          'Logistics operator / exporter',
+          'Other'
+        ],
+        placeholders: {
+          name: 'Your name',
+          company: 'Company name',
+          role: 'e.g. Procurement lead, CFO',
+          country: 'Country',
+          message: 'e.g. trade polymetallic concentrates and doré, secure mineral commodities supply, or coordinate international logistics.'
+        },
+        submit: 'Send via WhatsApp',
+        waIntro: 'Hello, I would like to discuss a mineral commodities operation.',
+        waFields: ['Name', 'Company', 'Email', 'Role', 'Segment', 'Country', 'Goal'],
+        waMissing: 'Not provided'
+      },
+      fr: {
+        htmlLang: 'fr',
+        title: 'GrupoBTG – Commodities et concentrés polymétalliques',
+        nav: ['Accueil', 'Modèle', 'Services', 'Produits', 'Valeur', 'Processus', 'Chiffres', 'Philosophie', 'Nous', 'Contact'],
+        heroTitle: 'Nous connectons les commodities minérales aux marchés mondiaux',
+        heroText: 'Solutions intégrées pour la commercialisation de concentrés polymétalliques et de doré. Depuis la Colombie, nous structurons des opérations efficaces, sûres et transparentes sur toute la chaîne de valeur.',
+        heroPrimary: 'Demander un échange',
+        heroSecondary: 'Comment nous opérons',
+        contactTitle: 'Parlons de votre opération',
+        contactSubtitle: 'Partagez vos objectifs et notre équipe concevra une proposition pour votre chaîne d’approvisionnement.',
+        labels: ['Nom complet', 'Entreprise', 'Email professionnel', 'Fonction', 'Je représente', 'Pays', 'Que souhaitez-vous accomplir ?'],
+        segmentOptions: [
+          'Producteur de commodities minérales',
+          'Raffinerie / fonderie',
+          'Trader international',
+          'Laboratoire',
+          'Opérateur logistique / exportateur',
+          'Autre'
+        ],
+        placeholders: {
+          name: 'Votre nom',
+          company: "Nom de l'entreprise",
+          role: 'ex. Responsable achats, CFO',
+          country: 'Pays',
+          message: 'ex. commercialiser des concentrés polymétalliques et du doré, sécuriser l’approvisionnement en commodities minérales ou coordonner la logistique internationale.'
+        },
+        submit: 'Envoyer via WhatsApp',
+        waIntro: 'Bonjour, je souhaite échanger sur une opération de commodities minérales.',
+        waFields: ['Nom', 'Entreprise', 'Email', 'Fonction', 'Segment', 'Pays', 'Objectif'],
+        waMissing: 'Non renseigné'
+      }
+    };
+
+    let currentLang = 'es';
+
+    const setLanguage = (lang) => {
+      const t = i18n[lang] || i18n.es;
+      currentLang = lang in i18n ? lang : 'es';
+
+      document.documentElement.lang = t.htmlLang;
+      document.title = t.title;
+      document.getElementById('nav-home').textContent = t.nav[0];
+      document.getElementById('nav-platform').textContent = t.nav[1];
+      document.getElementById('nav-technology').textContent = t.nav[2];
+      document.getElementById('nav-traceability').textContent = t.nav[3];
+      document.getElementById('nav-marketplace').textContent = t.nav[4];
+      document.getElementById('nav-analytics').textContent = t.nav[5];
+      document.getElementById('nav-figures').textContent = t.nav[6];
+      document.getElementById('nav-commitments').textContent = t.nav[7];
+      document.getElementById('nav-about').textContent = t.nav[8];
+      document.getElementById('nav-contact').textContent = t.nav[9];
+      document.getElementById('hero-title').textContent = t.heroTitle;
+      document.getElementById('hero-text').textContent = t.heroText;
+      document.getElementById('hero-cta-primary').textContent = t.heroPrimary;
+      document.getElementById('hero-cta-secondary').textContent = t.heroSecondary;
+      document.getElementById('contact-title').textContent = t.contactTitle;
+      document.getElementById('contact-subtitle').textContent = t.contactSubtitle;
+      document.getElementById('label-name').textContent = t.labels[0];
+      document.getElementById('label-company').textContent = t.labels[1];
+      document.getElementById('label-email').textContent = t.labels[2];
+      document.getElementById('label-role').textContent = t.labels[3];
+      document.getElementById('label-segment').textContent = t.labels[4];
+      document.getElementById('label-country').textContent = t.labels[5];
+      document.getElementById('label-message').textContent = t.labels[6];
+      document.getElementById('segment-option-1').textContent = t.segmentOptions[0];
+      document.getElementById('segment-option-2').textContent = t.segmentOptions[1];
+      document.getElementById('segment-option-3').textContent = t.segmentOptions[2];
+      document.getElementById('segment-option-4').textContent = t.segmentOptions[3];
+      document.getElementById('segment-option-5').textContent = t.segmentOptions[4];
+      document.getElementById('segment-option-6').textContent = t.segmentOptions[5];
+      document.getElementById('name').placeholder = t.placeholders.name;
+      document.getElementById('company').placeholder = t.placeholders.company;
+      document.getElementById('role').placeholder = t.placeholders.role;
+      document.getElementById('country').placeholder = t.placeholders.country;
+      document.getElementById('message').placeholder = t.placeholders.message;
+      document.getElementById('contact-submit').textContent = t.submit;
+    };
+
+    const languageSelect = document.getElementById('language-select');
+    if (languageSelect) {
+      languageSelect.value = 'es';
+      languageSelect.addEventListener('change', (event) => setLanguage(event.target.value));
+    }
+    setLanguage('es');
+
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById('name')?.value?.trim() || '';
+        const company = document.getElementById('company')?.value?.trim() || '';
+        const email = document.getElementById('email')?.value?.trim() || '';
+        const role = document.getElementById('role')?.value?.trim() || '';
+        const segment = document.getElementById('segment')?.value?.trim() || '';
+        const country = document.getElementById('country')?.value?.trim() || '';
+        const message = document.getElementById('message')?.value?.trim() || '';
+
+        const langPack = i18n[currentLang] || i18n.es;
+        const whatsappText = [
+          langPack.waIntro,
+          '',
+          `${langPack.waFields[0]}: ${name || langPack.waMissing}`,
+          `${langPack.waFields[1]}: ${company || langPack.waMissing}`,
+          `${langPack.waFields[2]}: ${email || langPack.waMissing}`,
+          `${langPack.waFields[3]}: ${role || langPack.waMissing}`,
+          `${langPack.waFields[4]}: ${segment || langPack.waMissing}`,
+          `${langPack.waFields[5]}: ${country || langPack.waMissing}`,
+          '',
+          `${langPack.waFields[6]}: ${message || langPack.waMissing}`
+        ].join('\n');
+
+        const whatsappUrl = `https://wa.me/573013514861?text=${encodeURIComponent(whatsappText)}`;
+        window.open(whatsappUrl, '_blank');
+      });
+    }
 
     const revealTargets = document.querySelectorAll('.section, .card, .figure-item');
     const observer = new IntersectionObserver((entries, currentObserver) => {
