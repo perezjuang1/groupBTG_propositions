@@ -1033,6 +1033,10 @@ section {
   position: relative;
 }
 
+.animate-on-scroll {
+  --animate-duration: 520ms;
+}
+
 @media (max-width: 1024px) {
   .hero {
     grid-template-columns: minmax(0, 1fr);

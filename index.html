@@ -9,6 +9,7 @@
   <link rel="canonical" href="https://www.grupobtg.com.co/" />
   <meta property="og:url" content="https://www.grupobtg.com.co/" />
   <title>GrupoBTG – Commodities y concentrados polimetálicos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://www.grupobtg.com.co/styles.css" />
 </head>
 <body>
@@ -42,7 +43,7 @@
   <main>
     <!-- HOME -->
     <section id="home" class="section hero">
-      <div class="hero-content">
+      <div class="hero-content animate__animated animate__fadeInUp animate__faster">
         <h1 id="hero-title">Conectamos los commodities minerales con los mercados globales</h1>
         <p id="hero-text">
           Soluciones integrales para la comercialización de concentrados polimetálicos y doré.
@@ -101,7 +102,7 @@
 
     <!-- PLATFORM -->
     <section id="platform" class="section">
-      <header class="section-header">
+      <header class="section-header animate-on-scroll">
         <h2>Modelo de negocio: integración de la cadena de valor</h2>
         <p>
           Inspirado en el enfoque de traders globales: estamos presentes desde el punto de producción hasta el destino internacional.
@@ -196,7 +197,7 @@
 
     <!-- TECHNOLOGY -->
     <section id="technology" class="section alt">
-      <header class="section-header">
+      <header class="section-header animate-on-scroll">
         <h2>Servicios profesionales y escalables</h2>
         <p>
           Gestionamos operaciones complejas con servicios integrados para asegurar continuidad comercial y operativa.
@@ -258,7 +259,7 @@
 
     <!-- TRACEABILITY -->
     <section id="traceability" class="section">
-      <header class="section-header">
+      <header class="section-header animate-on-scroll">
         <h2>Productos y mercados</h2>
         <p>
           Operamos productos alineados con la demanda internacional y estándares de comercialización formal.
@@ -298,7 +299,7 @@
 
     <!-- MARKETPLACE -->
     <section id="marketplace" class="section alt">
-      <header class="section-header">
+      <header class="section-header animate-on-scroll">
         <h2>Propuesta de valor</h2>
         <p>
           ¿Qué nos hace diferentes? Ejecutamos, integramos y conectamos toda la operación con visión de mercado.
@@ -359,7 +360,7 @@
 
     <!-- ANALYTICS -->
     <section id="analytics" class="section">
-      <header class="section-header">
+      <header class="section-header animate-on-scroll">
         <h2>Proceso de trabajo</h2>
         <p>
           Un método claro para estructurar, ejecutar y cerrar operaciones con eficiencia y control.
@@ -414,7 +415,7 @@
 
     <!-- CIFRAS CLAVE -->
     <section id="figures" class="section alt">
-      <header class="section-header">
+      <header class="section-header animate-on-scroll">
         <h2>Diferencial tipo multinacional</h2>
         <p>
           Una propuesta enfocada en escala, control de operación y acceso a mercados formales.
@@ -446,7 +447,7 @@
 
     <!-- COMPROMISOS -->
     <section id="commitments" class="section">
-      <header class="section-header">
+      <header class="section-header animate-on-scroll">
         <h2>Filosofía de operación</h2>
         <p>
           Un enfoque de trading responsable para generar valor sostenible a lo largo de toda la cadena.
@@ -476,7 +477,7 @@
 
     <!-- ABOUT -->
     <section id="about" class="section alt">
-      <header class="section-header">
+      <header class="section-header animate-on-scroll">
         <h2>Quiénes somos</h2>
         <p>
           Somos una empresa colombiana con sede en Medellín, especializada en la gestión integral de operaciones
@@ -510,7 +511,7 @@
 
     <!-- CONTACT -->
     <section id="contact" class="section contact">
-      <header class="section-header">
+      <header class="section-header animate-on-scroll">
         <h2 id="contact-title">Conversemos sobre su operación</h2>
         <p id="contact-subtitle">
           Comparta sus objetivos y nuestro equipo diseñará una propuesta para su cadena de suministro.
@@ -794,6 +795,17 @@
     }, { threshold: 0.12 });
 
     revealTargets.forEach((element) => observer.observe(element));
+
+    const animateTargets = document.querySelectorAll('.animate-on-scroll');
+    const animateObserver = new IntersectionObserver((entries, currentObserver) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('animate__animated', 'animate__fadeInUp', 'animate__faster');
+        currentObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.2 });
+
+    animateTargets.forEach((element) => animateObserver.observe(element));
   </script>
 </body>
 </html>
