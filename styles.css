@@ -506,10 +506,12 @@ section {
 
 .mini-chart-bars .bar span {
   position: absolute;
-  bottom: 4px;
+  bottom: 6px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.7rem;
+  font-size: 1rem;
+  line-height: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
   color: #fff;
 }
 
